@@ -7,14 +7,16 @@
 <h2>What the app stores on your iPhone</h2>
 <ul>
 <li>The list of TVs you save: the name, the brand and the IP address of each TV.</li>
-<li>A pairing token from your TV, if the TV gives one (Samsung). Beamr keeps the token in the iOS Keychain.</li>
+<li>A pairing token from your TV, if the TV gives one (Samsung). Beamr keeps the token in the iOS Keychain. If the Keychain refuses to save it, the token stays on your iPhone in the app&#39;s own storage, so you do not need to pair again.</li>
 <li>For Google TV, a client certificate that Beamr creates on your iPhone, and the public key of each paired TV. Beamr keeps them in the iOS Keychain.</li>
+<li>A hardware ID for each saved TV. It is a number that the TV reports about itself, for example a device ID or a Wi-Fi address. Beamr uses it to know that a TV is the same TV after its IP address changes. It stays on your iPhone. Beamr never sends it to anyone. It is not in the diagnostics text.</li>
 <li>Your settings, for example which TV is active.</li>
-<li>Simple counters on your iPhone: how many connects worked or failed, the kind of failure, and how many keys you pressed. Beamr never sends them. The "Copy diagnostics" button copies a short text (app version, iPhone model, iOS version, the brand, the last error and these counters) to your clipboard only when you tap it. The text has no IP address and no TV name. Beamr also keeps on your iPhone the number of days you used the app and the last app version for which it asked for a rating, and nothing leaves your iPhone.</li>
+<li>Simple counters on your iPhone: how many connects worked or failed, the kind of failure, and how many keys you pressed. Beamr never sends them. The "Copy diagnostics" button copies a short text (app version, iPhone model, iOS version, the brand, the last error and these counters) to your clipboard only when you tap it. The text has no IP address and no TV name.</li>
+<li>Rating counters: how many real key presses you made, how many days you used the app, the last day you used it, and the last app version for which Beamr asked for a rating. Beamr uses them to decide when to ask for a rating. They stay on your iPhone.</li>
 </ul>
 <p>This data stays on your iPhone. If you delete the app, iOS deletes this data. Keychain items can stay on the device after you delete an app. Remove a TV in the app to delete its saved token. The Google TV certificate stays until you delete the app.</p>
 <h2>Local Network access</h2>
-<p>Beamr asks for Local Network permission. It uses the permission to find your TV and to send commands to your TV on your home Wi-Fi network. Beamr does not scan networks outside your own.</p>
+<p>Beamr asks for Local Network permission. It uses the permission to find your TV and to send commands to your TV on your home Wi-Fi network. Beamr does not scan networks outside your own. When a saved TV does not answer, Beamr can search your home Wi-Fi network for that TV, because its IP address may have changed. It does this only when the saved address of the TV is on the network that your iPhone uses now. It looks only at your own local network, and only at the ports of that TV brand. Beamr does not store the other devices that it finds.</p>
 <h2>Purchases</h2>
 <p>Beamr Pro is an in-app purchase. Apple handles the payment. Beamr does not see your payment details. Beamr checks with Apple that you own Pro.</p>
 <h2>Third parties</h2>
